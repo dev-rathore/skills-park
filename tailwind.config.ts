@@ -18,19 +18,30 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        primary: "var(--primary) 3px 3px 0px",
+        "primary-2xl": "var(--primary) 6px 6px 0px",
+        secondary: "var(--secondary) 3px 3px 0px",
+        "secondary-2xl": "var(--secondary) 6px 6px 0px",
+      },
+      dropShadow: {
+        primary: "3px 3px var(--primary)",
+        secondary: "3px 3px var(--secondary)",
+      },
       colors: {
+        white: "var(--white)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
