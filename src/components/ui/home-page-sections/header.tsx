@@ -17,12 +17,12 @@ import Image from "next/image"
 const HeaderSection = () => {
   return (
     <header
-      className="sticky top-0 flex h-20 items-center gap-4 bg-background/95 px-4 md:px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50"
+      className="sticky top-0 flex h-20 items-center gap-4 bg-background/95 px-4 lg:px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50"
     >
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+      <nav className="hidden flex-col gap-6 text-lg font-medium lg:flex lg:flex-row lg:items-center lg:gap-5 lg:text-sm xl:gap-6">
         <Link
           href="#"
-          className="flex items-center gap-2 text-lg font-semibold md:text-base"
+          className="flex items-center gap-2 text-lg font-semibold lg:text-base"
         >
           <Image
             src="/skillspark-logo-transparent.png"
@@ -83,7 +83,7 @@ const HeaderSection = () => {
           <Button
             variant="outline"
             size="icon"
-            className="shrink-0 md:hidden"
+            className="shrink-0 lg:hidden"
           >
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle navigation menu</span>
@@ -154,21 +154,21 @@ const HeaderSection = () => {
                 <Input
                   type="search"
                   placeholder="Search Courses..."
-                  className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+                  className="pl-8 sm:w-[300px] lg:w-[300px]"
                 />
               </div>
             </form>
           </nav>
         </SheetContent>
       </Sheet>
-      <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-        <form className="hidden md:block ml-auto flex-1 sm:flex-initial">
+      <div className="flex w-full items-center gap-4 lg:ml-auto lg:gap-4">
+        <form className="hidden lg:block ml-auto flex-1 sm:flex-initial">
           <div className="relative">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-foreground/60" />
             <Input
               type="search"
               placeholder="Search Courses..."
-              className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+              className="pl-8 sm:w-[300px] lg:w-[300px]"
             />
           </div>
         </form>
