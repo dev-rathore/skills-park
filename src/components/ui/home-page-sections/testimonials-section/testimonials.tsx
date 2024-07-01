@@ -24,7 +24,7 @@ const TestimonialsSection = () => {
       ref={targetRef}
     >
       <div
-        className='sticky top-0 h-screen overflow-hidden pt-36'
+        className='sticky top-0 h-screen overflow-hidden pt-20 md:pt-36'
       >
         <h1 className="text-5xl md:text-6xl text-center font-semibold drop-shadow-primary">Testimonials</h1>
         <div

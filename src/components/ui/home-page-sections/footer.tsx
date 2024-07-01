@@ -108,7 +108,7 @@ const FooterSection = () => {
         </div>
       </div>
 
-      <div className="py-10 text-center">
+      <div className="pt-2 pb-12 md:pb-4 text-center">
         <p className="text-base font-medium">
           &copy; {new Date().getFullYear()} Skillspark. All rights reserved.
         </p>

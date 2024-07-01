@@ -13,7 +13,7 @@ const TestimonialCard:React.FC<Props> = ({
 }) => {
   return (
     <div
-      className="border-2 border-secondary shadow-secondary min-w-[280px] max-w-[280px] md:min-w-[560px] md:max-w-[auto] p-8 flex flex-col gap-4"
+      className="border-2 border-secondary shadow-secondary min-w-[320px] max-w-[320px] md:min-w-[560px] md:max-w-[auto] p-8 flex flex-col gap-4"
     >
       <h3 className="text-2xl font-semibold">{testimonial.name}</h3>
       <h4 className="text-lg font-medium">- {testimonial.designation}</h4>
