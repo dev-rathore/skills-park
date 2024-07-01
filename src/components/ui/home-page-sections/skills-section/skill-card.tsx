@@ -40,8 +40,8 @@ const SkillCard: React.FC<Props> = ({
     >
       <h3 className="text-2xl font-semibold">{content.title}</h3>
       <div>
-        {content.description.map((desc) => (
-          <div className='flex items-start gap-2 text-base'>
+        {content.description.map((desc, i) => (
+          <div className='flex items-start gap-2 text-base' key={i}>
             <ArrowRight className="min-w-8 mt-1"/>
             <p>
               {desc}

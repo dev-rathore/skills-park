@@ -13,7 +13,7 @@ const NewsletterSubscribeSection = () => {
         <div className="w-full md:w-1/2 max-w-xl lg:max-w-lg">
           <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">Subscribe to our newsletter.</h2>
           <p className="mt-4 text-lg leading-8 text-primary-foreground">
-            Get the latest updates and news about our platform. We promise we won't spam you.
+            Get the latest updates and news about our platform. We promise we won&apos;t spam you.
           </p>
           <div className="mt-6 flex max-w-md gap-x-4">
             <label htmlFor="email-address" className="sr-only">Email address</label>

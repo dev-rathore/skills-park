@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { useScroll, useTransform } from 'framer-motion';
+import { MotionValue, useScroll, useTransform } from 'framer-motion';
 import SkillCard from './skill-card';
 import { SKILLS } from './skills-data';
 import { ArrowRight } from 'lucide-react';
 
-const SkillsSection = () => {
+const SkillsSection: React.FC = () => {
   const targetRef = useRef(null);
   const isMediumScreenSize = window.innerWidth < 1024;
 
@@ -14,12 +14,20 @@ const SkillsSection = () => {
     target: targetRef,
   });
 
+  const useTransformHook = (
+    scrollYProgress: MotionValue<number>,
+    arg1: [number, number],
+    arg2: [number, number],
+  ) => {
+    return useTransform(scrollYProgress, arg1, arg2);
+  };
+
   const transformArray = SKILLS.map((skill, i) => {
     const initial = i * 0.2;
     const translateFinal = (i + 1) * 0.2;
     const opacityFinal = translateFinal - 0.15;
-    const translateY = useTransform(scrollYProgress, [initial, translateFinal], [400, 0]);
-    const opacity = useTransform(scrollYProgress, [initial, opacityFinal], [0, 1]);
+    const translateY = useTransformHook(scrollYProgress, [initial, translateFinal], [400, 0]);
+    const opacity = useTransformHook(scrollYProgress, [initial, opacityFinal], [0, 1]);
 
     return {
       translateY,
@@ -40,13 +48,13 @@ const SkillsSection = () => {
             <div className='flex items-start gap-4'>
               <ArrowRight className="min-w-8 mt-1"/>
               <p>
-                Our platform offers a diverse range of high-quality courses designed to help you master new skills. Whether you're looking to enhance your professional expertise or explore a new hobby, our expert instructors and flexible learning options make it easy to achieve your goals.
+                Our platform offers a diverse range of high-quality courses designed to help you master new skills. Whether you&apos;re looking to enhance your professional expertise or explore a new hobby, our expert instructors and flexible learning options make it easy to achieve your goals.
               </p>
             </div>
             <div className='flex items-start gap-4'>
               <ArrowRight className="min-w-8 mt-1"/>
               <p>
-                We provide comprehensive and accessible online courses tailored to meet the needs of learners at all levels. From programming and digital marketing to creative arts and entrepreneurship, our platform empowers you to learn, grow, and succeed in today's competitive landscape.
+                We provide comprehensive and accessible online courses tailored to meet the needs of learners at all levels. From programming and digital marketing to creative arts and entrepreneurship, our platform empowers you to learn, grow, and succeed in today&apos;s competitive landscape.
               </p>
               </div>
             <div className='flex items-start gap-4'>

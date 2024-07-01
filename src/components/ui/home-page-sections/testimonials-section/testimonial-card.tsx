@@ -18,8 +18,8 @@ const TestimonialCard:React.FC<Props> = ({
       <h3 className="text-2xl font-semibold">{testimonial.name}</h3>
       <h4 className="text-lg font-medium">- {testimonial.designation}</h4>
       <div className="flex flex-col gap-4">
-        {testimonial.comments.map((comment) => (
-          <p>{comment}</p>
+        {testimonial.comments.map((comment, i) => (
+          <p key={i}>{comment}</p>
         ))}
       </div>
     </div>
