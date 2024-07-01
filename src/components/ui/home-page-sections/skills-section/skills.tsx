@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { MotionValue, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 import SkillCard from './skill-card';
 import { SKILLS } from './skills-data';
 import { ArrowRight } from 'lucide-react';
@@ -14,18 +14,29 @@ const SkillsSection: React.FC = () => {
     target: targetRef,
   });
 
-  const transformArray = SKILLS.map((skill, i) => {
-    const initial = i * 0.2;
-    const translateFinal = (i + 1) * 0.2;
-    const opacityFinal = translateFinal - 0.15;
+  // const transformArray = SKILLS.map((skill, i) => {
+  //   const initial = i * 0.2;
+  //   const translateFinal = (i + 1) * 0.2;
+  //   const opacityFinal = translateFinal - 0.15;
 
-    return {
-      content: skill,
-      initial,
-      opacityFinal,
-      translateFinal,
-    }
-  });
+  //   return {
+  //     content: skill,
+  //     initial,
+  //     opacityFinal,
+  //     translateFinal,
+  //   }
+  // });
+
+  const translateY1 = useTransform(scrollYProgress, [0, 0.2], [400, 0]);
+  const translateY2 = useTransform(scrollYProgress, [0.2, 0.4], [400, 0]);
+  const translateY3 = useTransform(scrollYProgress, [0.4, 0.6], [400, 0]);
+  const translateY4 = useTransform(scrollYProgress, [0.6, 0.8], [400, 0]);
+  const translateY5 = useTransform(scrollYProgress, [0.8, 1], [400, 0]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.185], [0, 1]);
+  const opacity2 = useTransform(scrollYProgress, [0.2, 0.385], [0, 1]);
+  const opacity3 = useTransform(scrollYProgress, [0.4, 0.585], [0, 1]);
+  const opacity4 = useTransform(scrollYProgress, [0.6, 0.785], [0, 1]);
+  const opacity5 = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
 
   return (
     <section
@@ -59,21 +70,41 @@ const SkillsSection: React.FC = () => {
         <div
           className='order-2 lg:order-1 relative hidden lg:block'
         >
-          {transformArray?.map(({
-            content,
-            initial,
-            opacityFinal,
-            translateFinal,
-          }, i) => (
-            <SkillCard
-              content={content}
-              key={i}
-              left={`${i * 8 * 4}px`}
-              opacity={useTransform(scrollYProgress, [initial, opacityFinal], [0, 1])}
-              top={`${i * 8 * 4}px`}
-              translateY={useTransform(scrollYProgress, [initial, translateFinal], [400, 0])}
-            />
-          ))}
+          <SkillCard
+            content={SKILLS[0]}
+            left={'0px'}
+            opacity={opacity1}
+            top={'0px'}
+            translateY={translateY1}
+          />
+          <SkillCard
+            content={SKILLS[1]}
+            left={'32px'}
+            opacity={opacity2}
+            top={'32px'}
+            translateY={translateY2}
+          />
+          <SkillCard
+            content={SKILLS[2]}
+            left={'64px'}
+            opacity={opacity3}
+            top={'64px'}
+            translateY={translateY3}
+          />
+          <SkillCard
+            content={SKILLS[3]}
+            left={'96px'}
+            opacity={opacity4}
+            top={'96px'}
+            translateY={translateY4}
+          />
+          <SkillCard
+            content={SKILLS[4]}
+            left={'128px'}
+            opacity={opacity5}
+            top={'128px'}
+            translateY={translateY5}
+          />
         </div>
       </div>
       <div
