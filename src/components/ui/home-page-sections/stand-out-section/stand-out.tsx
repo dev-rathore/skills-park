@@ -4,7 +4,7 @@ const StandOutSection = () => {
   return (
     <section className="min-h-screen flex flex-col gap-16 md:gap-36 overflow-hidden">
       <h1 className="text-5xl md:text-6xl text-center font-semibold drop-shadow-primary">Why choose us?</h1>
-      <div className="flex flex-col gap-12 md:gap-36">
+      <div className="flex flex-col gap-12 md:gap-36 px-2 py-3">
         <StandOutCard
           initialX={[-100, 100]}
           imageUrl="/photography-illustration.jpeg"

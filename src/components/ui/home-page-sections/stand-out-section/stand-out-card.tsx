@@ -18,7 +18,7 @@ const StandOutCard: React.FC<StandOutCardProps> = ({
   title,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row px-2 md:px-0 gap-12 md:gap-20 items-center justify-center">
+    <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
       <motion.div
         style={{
           background: `url(${imageUrl})`,
