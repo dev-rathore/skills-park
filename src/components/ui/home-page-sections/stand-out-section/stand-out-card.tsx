@@ -31,10 +31,10 @@ const StandOutCard: React.FC<StandOutCardProps> = ({
           duration: 0.5,
           ease: "easeOut",
         }}
-        className={`${order[1]} md:${order[0]} min-w-full md:min-w-96 min-h-96 bg-primary shadow-secondary-2xl bg-no-repeat bg-center`}
+        className={`${order[0]} md:${order[1]} min-w-full md:min-w-96 min-h-96 bg-primary shadow-secondary-2xl bg-no-repeat bg-center`}
       />
       <motion.div
-        className={`${order[0]} md:${order[1]} w-full md:w-1/2 flex flex-col gap-4`}
+        className={`${order[1]} md:${order[0]} w-full md:w-1/2 flex flex-col gap-4`}
         initial={{ opacity: 0, x: initialX[1] }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{

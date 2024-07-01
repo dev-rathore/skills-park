@@ -43,7 +43,7 @@ const SkillsSection: React.FC = () => {
 
   return (
     <section
-      className="relative h-auto lg:h-[400vh] flex flex-col gap-0 md:gap-36 py-20"
+      className="relative h-auto lg:h-[400vh] flex flex-col gap-0 md:gap-36 py-20 overflow-x-hidden"
       ref={isMediumScreenSize() ? null : targetRef}
     >
       <div className="lg:sticky lg:top-0 h-auto lg:min-h-[100vh] gap-0 lg:pt-48 flex flex-col lg:flex-row lg-gap-10">
@@ -113,7 +113,7 @@ const SkillsSection: React.FC = () => {
       <div
         className='order-2 lg:order-1 block lg:hidden pt-10'
       >
-        <div className='flex flex-col gap-10'>
+        <div className='flex flex-col gap-10 px-2'>
           {SKILLS?.map((skill, i) => (
             <SkillCard
               content={skill}

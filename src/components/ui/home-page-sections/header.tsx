@@ -17,7 +17,7 @@ import Image from "next/image"
 const HeaderSection = () => {
   return (
     <header
-      className="sticky top-0 flex h-20 items-center gap-4 bg-background/95 px-4 lg:px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50"
+      className="sticky top-0 flex h-20 items-center gap-4 bg-background md:bg-background/95 px-4 lg:px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50"
     >
       <nav className="hidden flex-col gap-6 text-lg font-medium lg:flex lg:flex-row lg:items-center lg:gap-5 lg:text-sm xl:gap-6">
         <Link
