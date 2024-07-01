@@ -14,27 +14,18 @@ const SkillsSection: React.FC = () => {
     target: targetRef,
   });
 
-  const useTransformHook = (
-    scrollYProgress: MotionValue<number>,
-    arg1: [number, number],
-    arg2: [number, number],
-  ) => {
-    return useTransform(scrollYProgress, arg1, arg2);
-  };
-
   const transformArray = SKILLS.map((skill, i) => {
     const initial = i * 0.2;
     const translateFinal = (i + 1) * 0.2;
     const opacityFinal = translateFinal - 0.15;
-    const translateY = useTransformHook(scrollYProgress, [initial, translateFinal], [400, 0]);
-    const opacity = useTransformHook(scrollYProgress, [initial, opacityFinal], [0, 1]);
 
     return {
-      translateY,
-      opacity,
       content: skill,
+      initial,
+      opacityFinal,
+      translateFinal,
     }
-  })
+  });
 
   return (
     <section
@@ -69,17 +60,18 @@ const SkillsSection: React.FC = () => {
           className='order-2 lg:order-1 relative hidden lg:block'
         >
           {transformArray?.map(({
-            translateY,
-            opacity,
             content,
+            initial,
+            opacityFinal,
+            translateFinal,
           }, i) => (
             <SkillCard
               content={content}
               key={i}
               left={`${i * 8 * 4}px`}
-              opacity={opacity}
+              opacity={useTransform(scrollYProgress, [initial, opacityFinal], [0, 1])}
               top={`${i * 8 * 4}px`}
-              translateY={translateY}
+              translateY={useTransform(scrollYProgress, [initial, translateFinal], [400, 0])}
             />
           ))}
         </div>
