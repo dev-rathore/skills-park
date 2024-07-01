@@ -10,9 +10,13 @@ const TestimonialsSection = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const isMediumScreenSize = window.innerWidth < 768;
+  const isMediumScreenSize = () => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth < 1024;
+    }
+  };
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", isMediumScreenSize ? "-90%" : "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", isMediumScreenSize() ? "-90%" : "-80%"]);
 
   return (
     <section

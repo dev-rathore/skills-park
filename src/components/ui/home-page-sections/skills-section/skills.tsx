@@ -8,8 +8,11 @@ import { ArrowRight } from 'lucide-react';
 
 const SkillsSection: React.FC = () => {
   const targetRef = useRef(null);
-  const isMediumScreenSize = window.innerWidth < 1024;
-
+  const isMediumScreenSize = () => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth < 1024;
+    }
+  };
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
@@ -41,7 +44,7 @@ const SkillsSection: React.FC = () => {
   return (
     <section
       className="relative h-auto lg:h-[400vh] flex flex-col gap-0 md:gap-36 py-20"
-      ref={isMediumScreenSize ? null : targetRef}
+      ref={isMediumScreenSize() ? null : targetRef}
     >
       <div className="lg:sticky lg:top-0 h-auto lg:min-h-[100vh] gap-0 lg:pt-48 flex flex-col lg:flex-row lg-gap-10">
         <div className='order-1 lg:order-2 w-full lg:ml-auto lg:w-1/2 flex flex-col gap-10'>
